@@ -1,0 +1,65 @@
+{% extends 'navbar.html' %}
+{% block content %}
+<br><h3 align="center">Assigned Books</h3>
+<form  method="post">
+  {% csrf_token %}
+<div  style="float:left">
+  <br><br><table cellpadding="5">
+    <tr>
+      <td>Student Sem</td>
+      <td><input type="text" name="tbssem"></td>
+    </tr>
+    <tr>
+      <td>Student Course</td>
+      <td><select name="ddlcourse" >
+        {% for i in course %}
+        <option>{{i.course_name }}</option>
+        {% endfor %}
+      </select></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="submit" value="submit"></td>
+    </tr>
+
+  </table>
+</div>
+</form>
+<form action="abookdata" method="post">
+  {% csrf_token %}
+  <div align="center" >
+    <br><br><table cellpadding="5">
+      <tr>
+        <td>Student Name</td>
+        <td><select name="ddlsname">
+          {% for i in data %}
+          <option>{{i.student_name}}</option>
+          {% endfor %}
+        </select> </td>
+      </tr>
+      <tr>
+        <td>Book Name</td>
+        <td><select name="ddlbname">
+          {% for i in book %}
+          <option>{{i.book_name}}</option>
+          {% endfor %}
+        </select> </td>
+      </tr>
+      <tr>
+        <td>Start Date</td>
+        <td><input type="date" name="tbsdate"></td>
+      </tr>
+      <tr>
+        <td>End Date</td>
+        <td><input type="date" name="tbedate"></td>
+      </tr>
+      <tr>
+      <td></td>
+      <td><input type="submit" value="assign"></td>
+    </tr>
+    </table>
+  </div>
+</form>
+
+
+{% endblock %}

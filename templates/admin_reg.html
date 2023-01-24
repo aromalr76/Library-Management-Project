@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'css/areg.css' %}" rel="stylesheet">
+</head>
+<body>
+<h2 align="center">Admin Registration</h2>
+<form  action="admindata" method="post">
+    {% csrf_token %}
+    <h3 align="center">{{data}}</h3>
+    <table align="center" cellpadding="5">
+        <tr>
+            <td>Username</td>
+            <td><input type="text" name="tbuname"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="email" name="tbemail"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="tbpass"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Register" name="tbsubmit"></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
