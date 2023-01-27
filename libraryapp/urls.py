@@ -23,5 +23,8 @@ urlpatterns = [
     path('updateissuebk/<int:id>', views.updateissuebk_fun, name='updateissuebk'),
     path('deleteissuebk/<int:id>', views.deleteissuebk_fun, name='deleteissuebk'),
     path('issuedbkdet', views.issuebkdet_fun, name='issuedbkdet'),
-    path('logoutstd', views.logoutstd_fun, name='logoutstd')
+    path('logoutstd', views.logoutstd_fun, name='logoutstd'),
+    path('stdprofile', views.stdprofile_fun, name='stdprofile'),
+    path('updateprofile', views.updateprofile_fun, name='updateprofile'),
+    path('uprofiledata', views.profiledata_fun)
 ]
