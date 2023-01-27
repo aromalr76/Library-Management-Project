@@ -227,6 +227,7 @@ def updateprofile_fun(request):
     return render(request, 'updateprofile.html')
 
 
+
 @cache_control(no_cache=True,revalidate=True,nostore=True)
 @never_cache
 def profiledata_fun(request):
